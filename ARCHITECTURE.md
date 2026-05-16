@@ -4,6 +4,8 @@
 
 This template defines a framework for executing, monitoring, and optimizing ongoing operations across diverse domains (trading, personal finance, homeschooling, and others). The system combines specification-driven design with AI-assisted decision-making, executable automation, and collaborative oversight.
 
+> **Note**: For audience-specific guidance, see [STRUCTURE.md](STRUCTURE.md). This document is a comprehensive reference; choose your path for a guided introduction.
+
 ## Core Principles
 
 1. **Template over Prescription**: The template provides structural primitives that domains instantiate through configuration, not a fixed process.

@@ -2,6 +2,19 @@
 
 A framework for executing, monitoring, and optimizing ongoing operations using specification-driven design and AI-assisted intelligence.
 
+---
+
+## 👋 **First Time Here?**
+
+**Choose your role** to get started:
+- **Writing specs?** → [Spec Author Path](STRUCTURE.md#-spec-author-path)
+- **Building agents?** → [Implementer Path](STRUCTURE.md#-implementer-path)  
+- **Operating the system?** → [Operator Path](STRUCTURE.md#-operator-path)
+
+See [STRUCTURE.md](STRUCTURE.md) for full guidance.
+
+---
+
 ## What Is This?
 
 This template helps you run ongoing operations—whether trading, personal finance, homeschooling, or other domains—by structuring them around five core features:
