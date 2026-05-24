@@ -6,6 +6,19 @@ These are the interface contracts that all implementations must follow.
 
 ---
 
+## Skills Index
+
+- **Specification & State**
+  - `spec_query` — Parse and query markdown specifications
+  - `audit_log` — Standardized logging for decisions
+- **Observability** (see [observability/interfaces.md](observability/interfaces.md))
+  - `metric_calculator` — Calculate metrics from raw data
+  - `alert_evaluator` — Evaluate alert conditions
+  - `dashboard_manager` — Assemble dashboard snapshots
+  - `alert_router` — Route alerts to recipients
+
+---
+
 ## `spec_query` Skill Interface
 
 **Purpose**: Parse and query markdown specifications by criteria.
