@@ -44,7 +44,7 @@ class AlertEvaluator:
         """
         # TODO: Implement condition evaluation logic
         # This is a stub; actual implementation parses condition_logic
-        # See specs/trading/observability.md for examples
+        # See specs/examples/day-trading/observability.md for examples
 
         alert_name = alert_spec.get('name')
         if not alert_name:

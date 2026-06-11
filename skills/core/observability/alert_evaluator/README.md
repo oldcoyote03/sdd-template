@@ -72,7 +72,7 @@ else:
 from skills.core.spec_query import SpecQuery
 
 spec_query = SpecQuery()
-observability_spec = spec_query.load_spec('specs/trading/observability.md')
+observability_spec = spec_query.load_spec('specs/examples/day-trading/observability.md')
 alerts_list = observability_spec['sections']  # All alerts from spec
 
 # Get current state

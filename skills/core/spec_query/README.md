@@ -34,7 +34,7 @@ spec_skill = SpecQuery()
 
 ```python
 # Load and parse a markdown spec
-parsed = spec_skill.load_spec('specs/trading/execution.md')
+parsed = spec_skill.load_spec('specs/examples/day-trading/execution.md')
 
 # Returns:
 # {
@@ -49,13 +49,13 @@ parsed = spec_skill.load_spec('specs/trading/execution.md')
 ```python
 # Find all Tier 1 rules
 tier1_rules = spec_skill.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={'tier': 1}
 )
 
 # Find Tier 1 rules with price_break condition
 tier1_breaks = spec_skill.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={'tier': 1, 'condition': 'price_break'}
 )
 
@@ -67,7 +67,7 @@ tier1_breaks = spec_skill.query(
 ```python
 # Get a specific section by name
 section = spec_skill.query_section(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     section_name='Tier 1: High Confidence'
 )
 
@@ -78,7 +78,7 @@ section = spec_skill.query_section(
 
 ```python
 # Load all sections from a spec
-all_sections = spec_skill.get_all_sections('specs/trading/strategic.md')
+all_sections = spec_skill.get_all_sections('specs/examples/day-trading/strategic.md')
 
 # Iterate and process
 for section in all_sections:
@@ -145,7 +145,7 @@ Load and parse a markdown spec file.
 **Args:**
 - `spec_path` (str): Path to markdown spec file
   - Can be relative (from current working directory) or absolute
-  - Example: `'specs/trading/execution.md'`
+  - Example: `'specs/examples/day-trading/execution.md'`
 
 **Returns:**
 - Dict with keys: `raw`, `sections`, `metadata`
@@ -157,7 +157,7 @@ Load and parse a markdown spec file.
 **Caching:** Result is cached. Subsequent calls return cached version.
 
 ```python
-parsed = spec_skill.load_spec('specs/trading/execution.md')
+parsed = spec_skill.load_spec('specs/examples/day-trading/execution.md')
 ```
 
 ---
@@ -183,13 +183,13 @@ Query a spec for sections matching criteria.
 ```python
 # Find Tier 1 rules
 rules = spec_skill.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={'tier': 1}
 )
 
 # Find Tier 1 with specific condition
 rules = spec_skill.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={'tier': 1, 'condition': 'price_break'}
 )
 
@@ -211,7 +211,7 @@ Get a specific section by name.
 
 ```python
 section = spec_skill.query_section(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     section_name='Tier 1: High Confidence'
 )
 ```
@@ -225,7 +225,7 @@ Get all sections from a spec.
 **Returns:** List of all section dicts
 
 ```python
-all = spec_skill.get_all_sections('specs/trading/strategic.md')
+all = spec_skill.get_all_sections('specs/examples/day-trading/strategic.md')
 for section in all:
     print(section['title'])
 ```
@@ -253,7 +253,7 @@ Force reload a spec, bypassing cache.
 
 ```python
 # Bypass cache and re-read from disk
-parsed = spec_skill.reload_spec('specs/trading/execution.md')
+parsed = spec_skill.reload_spec('specs/examples/day-trading/execution.md')
 ```
 
 ---
@@ -266,7 +266,7 @@ parsed = spec_skill.reload_spec('specs/trading/execution.md')
 class ExecutionAgent:
     def __init__(self, spec_path, skills):
         self.spec_skill = skills['core/spec_query']
-        self.spec_path = spec_path  # e.g., 'specs/trading/execution.md'
+        self.spec_path = spec_path  # e.g., 'specs/examples/day-trading/execution.md'
     
     def on_market_signal(self, signal):
         # Query spec for matching rules
@@ -287,13 +287,13 @@ class ExecutionAgent:
     def on_market_signal(self, signal):
         # Query execution.md for rules
         exec_rules = self.spec_skill.query(
-            spec_path='specs/trading/execution.md',
+            spec_path='specs/examples/day-trading/execution.md',
             criteria={'tier': signal['tier']}
         )
         
         # Query collaboration.md for approval requirements
         approval_rules = self.spec_skill.query(
-            spec_path='specs/trading/collaboration.md',
+            spec_path='specs/examples/day-trading/collaboration.md',
             criteria={'tier': signal['tier']}
         )
 ```
@@ -305,7 +305,7 @@ class ExecutionAgent:
 ```python
 # Find high-confidence, high-volume setups
 rules = spec_skill.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={
         'tier': 1,
         'condition': 'price_break',
@@ -342,7 +342,7 @@ cd skills/core/spec_query
 python -m pytest spec_query_test.py
 ```
 
-Tests use specs from `specs/trading/` as test data.
+Tests use specs from `specs/examples/day-trading/` as test data.
 
 ---
 
@@ -350,4 +350,4 @@ Tests use specs from `specs/trading/` as test data.
 
 - [skills/core/interfaces.md](../interfaces.md) — Skill interface contracts
 - [docs/implementers.md](../../../docs/implementers.md) — How agents use skills
-- [specs/trading/](../../../specs/trading/) — Example specs to query against
+- [specs/examples/day-trading/](../../../specs/examples/day-trading/) — Example specs to query against

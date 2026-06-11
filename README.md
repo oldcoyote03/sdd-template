@@ -1,17 +1,20 @@
-# Operational System Template
+# SDD Template: Specification-Driven Operations
 
 A framework for executing, monitoring, and optimizing ongoing operations using specification-driven design and AI-assisted intelligence.
 
 ---
 
-## 👋 **First Time Here?**
+## 🚀 **Getting Started**
 
-**Choose your role** to get started:
-- **Writing specs?** → [Spec Author Path](STRUCTURE.md#-spec-author-path)
-- **Building agents?** → [Implementer Path](STRUCTURE.md#-implementer-path)  
-- **Operating the system?** → [Operator Path](STRUCTURE.md#-operator-path)
+**Are you using this as a template for a new domain?**
 
-See [STRUCTURE.md](STRUCTURE.md) for full guidance.
+→ See [.fork-guide/INSTRUCTIONS.md](.fork-guide/INSTRUCTIONS.md) for AI-assisted fork guidance  
+→ Or [.fork-guide/CHECKLIST.md](.fork-guide/CHECKLIST.md) for manual fork steps
+
+**Are you already in a domain-specific fork?**
+
+→ Read your role guide (e.g., `docs/trader.md`)  
+→ See [IMPLEMENTATION.md](IMPLEMENTATION.md) for system setup
 
 ---
 
@@ -38,40 +41,67 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed explanation.
 ## Directory Structure
 
 ```
+.fork-guide/                # Fork transition guidance (NOT part of domain forks)
+├── INSTRUCTIONS.md         # AI-assisted fork guide
+├── CHECKLIST.md            # Manual fork checklist
+└── templates/              # Scaffolds for domain forks
+
+ARCHITECTURE.md             # Three-layer architecture model (canonical reference)
+STRUCTURE.md                # Template structure and user paths (template reference)
+
+docs/
+├── implementers.md         # For those building agents (template reference)
+├── operators.md            # For those running the system (template reference)
+└── spec-authors.md         # For those writing specs (template reference)
+
+reference/                  # Reference material (kept in domain forks)
+├── five-features.md        # The five core features explained
+└── agent-interfaces.md     # Agent contracts and interfaces
+
+skills/core/                # Reusable infrastructure (kept in domain forks)
+├── audit_log/
+├── observability/
+└── spec_query/
+
 specs/
-├── templates/           # Generic templates (domain-agnostic)
+├── templates/              # Generic templates (reference)
 │   ├── STRATEGIC_TEMPLATE.md
 │   ├── EXECUTION_TEMPLATE.md
 │   ├── OBSERVABILITY_TEMPLATE.md
 │   ├── COLLABORATION_TEMPLATE.md
 │   └── REVIEW_TEMPLATE.md
-│
-└── trading/             # Example: Day trading instantiation
-    ├── strategic.md
-    ├── execution.md
-    ├── observability.md
-    ├── collaboration.md
-    ├── review.md
-    └── artifacts/       # Supporting media (diagrams, data samples, etc.)
+└── examples/
+    └── day-trading/        # Example: Day trading instantiation
+        ├── strategic.md
+        ├── execution.md
+        ├── observability.md
+        ├── collaboration.md
+        ├── review.md
+        └── artifacts/      # Supporting media (diagrams, data samples)
 ```
 
 ## How to Use This Template
 
-### For a New Domain
+### For a New Domain (Forking)
 
-1. **Copy the template structure**: `specs/[your-domain]/` directory
-2. **Fill in each spec**:
-   - Start with [STRATEGIC_TEMPLATE.md](specs/templates/STRATEGIC_TEMPLATE.md) → fill in your strategy
-   - Then [EXECUTION_TEMPLATE.md](specs/templates/EXECUTION_TEMPLATE.md) → fill in your executable actions
-   - Then [OBSERVABILITY_TEMPLATE.md](specs/templates/OBSERVABILITY_TEMPLATE.md) → define what to monitor
-   - Then [COLLABORATION_TEMPLATE.md](specs/templates/COLLABORATION_TEMPLATE.md) → define roles and approvals
-   - Finally [REVIEW_TEMPLATE.md](specs/templates/REVIEW_TEMPLATE.md) → define feedback loops
+To adapt this template for your own domain:
 
-3. **Add supporting artifacts**: Place diagrams, data samples, or other media in `[your-domain]/artifacts/`
+1. **Fork this repository** (on GitHub)
+2. **Choose your approach**:
+   - **AI-Assisted**: Follow [.fork-guide/INSTRUCTIONS.md](.fork-guide/INSTRUCTIONS.md)
+   - **Manual**: Follow [.fork-guide/CHECKLIST.md](.fork-guide/CHECKLIST.md)
+3. **Result**: A domain-specific fork ready for agent implementation
 
-4. **Reference the example**: Look at [specs/trading/](specs/trading/) for a concrete instantiation; use it as inspiration but customize for your domain
+### For Template Users (Understanding the Model)
 
-### For Developers/AI Agents
+If you want to understand how this template works:
+
+- **Five core features**: See [reference/five-features.md](reference/five-features.md)
+- **Architecture**: See [ARCHITECTURE.md](ARCHITECTURE.md)
+- **Agent design**: See [docs/implementers.md](docs/implementers.md) and [reference/agent-interfaces.md](reference/agent-interfaces.md)
+- **Agent interfaces**: See [reference/agent-interfaces.md](reference/agent-interfaces.md)
+
+### For Developers/AI Agents (Building Implementations)
 
 - Specs are written in **structured markdown**, designed to be both human-readable and machine-interpretable
 - Agents read specs as context for decision-making; they don't modify specs (specs are versioned in the repository)
@@ -79,13 +109,13 @@ specs/
 
 ## Example: Day Trading
 
-The [specs/trading/](specs/trading/) directory contains a complete instantiation:
+The [specs/examples/day-trading/](specs/examples/day-trading/) directory contains a complete instantiation:
 
-- **[strategic.md](specs/trading/strategic.md)**: Market structures, entry models, risk rules
-- **[execution.md](specs/trading/execution.md)**: Trade execution workflows, approval chains, permission windows
-- **[observability.md](specs/trading/observability.md)**: Data feeds, alerts, performance metrics
-- **[collaboration.md](specs/trading/collaboration.md)**: Trader, Risk Manager, Analyst roles
-- **[review.md](specs/trading/review.md)**: Post-trade journaling, daily/weekly/monthly reviews, feedback loops
+- **[strategic.md](specs/examples/day-trading/strategic.md)**: Market structures, entry models, risk rules
+- **[execution.md](specs/examples/day-trading/execution.md)**: Trade execution workflows, approval chains, permission windows
+- **[observability.md](specs/examples/day-trading/observability.md)**: Data feeds, alerts, performance metrics
+- **[collaboration.md](specs/examples/day-trading/collaboration.md)**: Trader, Risk Manager, Analyst roles
+- **[review.md](specs/examples/day-trading/review.md)**: Post-trade journaling, daily/weekly/monthly reviews, feedback loops
 
 This example demonstrates how the template handles:
 - Real-time data monitoring and alerts
@@ -104,12 +134,19 @@ This example demonstrates how the template handles:
 
 ## Next Steps
 
-1. Choose a domain (trading, personal finance, homeschooling, other)
-2. Read [ARCHITECTURE.md](ARCHITECTURE.md) to understand the model
-3. Copy the spec structure and fill in your domain-specific specs
-4. Reference [specs/trading/](specs/trading/) for an example if needed
-5. Build orchestration logic (agents, workflows) that reads your specs and executes your operation
+**To fork this template for your domain:**
+
+1. See [.fork-guide/INSTRUCTIONS.md](.fork-guide/INSTRUCTIONS.md) (AI-assisted) or [.fork-guide/CHECKLIST.md](.fork-guide/CHECKLIST.md) (manual)
+2. Follow the transition guide to adapt the template for your domain
+3. Result: A domain-specific repo ready for agent implementation
+
+**To understand the template architecture:**
+
+1. Read [reference/five-features.md](reference/five-features.md) for the five core features
+2. Read [ARCHITECTURE.md](ARCHITECTURE.md) for the three operational layers
+3. Read [docs/implementers.md](docs/implementers.md) for agent design guidance
+4. Read [reference/agent-interfaces.md](reference/agent-interfaces.md) for implementation contracts
 
 ---
 
-For questions or to extend the template, see [ARCHITECTURE.md](ARCHITECTURE.md) for design guidance.
+For questions about template design and architecture, see [ARCHITECTURE.md](ARCHITECTURE.md) or [docs/implementers.md](docs/implementers.md).

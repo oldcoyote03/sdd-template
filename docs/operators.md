@@ -327,7 +327,7 @@ Contains:
 ## See Also
 
 - [STRUCTURE.md](../STRUCTURE.md) — Other audiences and roles
-- [specs/trading/](../specs/trading/) — Trading rules and workflows (context for what you're approving)
+- [specs/examples/day-trading/](../specs/examples/day-trading/) — Trading rules and workflows (context for what you're approving)
 - [docs/spec-authors.md](../docs/spec-authors.md) — How specs are written (if you want to understand the rules)
 
 ---

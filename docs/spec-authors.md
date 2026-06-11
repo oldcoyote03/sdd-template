@@ -31,7 +31,7 @@ Every domain has five specifications. You'll write them in this order:
 - Quality criteria (e.g., "Entry model win rate target: 65%+")
 - Strategic priorities (e.g., "Tier 1 setups prioritized over Tier 3")
 
-**Example from trading**: [specs/trading/strategic.md](../specs/trading/strategic.md)
+**Example from trading**: [specs/examples/day-trading/strategic.md](../specs/examples/day-trading/strategic.md)
 
 **When to start**: First. Spend time here—this is your foundation.
 
@@ -58,7 +58,7 @@ Every domain has five specifications. You'll write them in this order:
 - Stop-loss and profit targets
 - Fallback procedures (e.g., "If venue A fails, try venue B")
 
-**Example from trading**: [specs/trading/execution.md](../specs/trading/execution.md)
+**Example from trading**: [specs/examples/day-trading/execution.md](../specs/examples/day-trading/execution.md)
 
 **When to start**: After Strategic. Strategic defines the rules; Execution defines the actions.
 
@@ -84,7 +84,7 @@ Every domain has five specifications. You'll write them in this order:
 - Dashboard elements (e.g., "Show live P&L", "Show open positions")
 - Review cadences (e.g., "Hourly for alerts, daily for summaries")
 
-**Example from trading**: [specs/trading/observability.md](../specs/trading/observability.md)
+**Example from trading**: [specs/examples/day-trading/observability.md](../specs/examples/day-trading/observability.md)
 
 **When to start**: After Execution. Execution defines what to monitor; Observability defines how.
 
@@ -110,7 +110,7 @@ Every domain has five specifications. You'll write them in this order:
 - Communication channels (e.g., "Alert via Slack", "Dashboard visibility")
 - Escalation paths (e.g., "If Trader unavailable, escalate to Risk Manager")
 
-**Example from trading**: [specs/trading/collaboration.md](../specs/trading/collaboration.md)
+**Example from trading**: [specs/examples/day-trading/collaboration.md](../specs/examples/day-trading/collaboration.md)
 
 **When to start**: After Observability. Once you know what to monitor and execute, define who's involved.
 
@@ -136,7 +136,7 @@ Every domain has five specifications. You'll write them in this order:
 - Report structure (e.g., "What sections must be in each report")
 - Closed-loop mechanism (e.g., "How feedback impacts strategy updates")
 
-**Example from trading**: [specs/trading/review.md](../specs/trading/review.md)
+**Example from trading**: [specs/examples/day-trading/review.md](../specs/examples/day-trading/review.md)
 
 **When to start**: Last. By now you know what to do, who does it, and how to monitor it. This closes the loop.
 
@@ -222,14 +222,14 @@ You're creating specs for a personal finance domain:
 2. Create directory: `specs/[your-domain]/`
 3. Copy templates from `specs/templates/` as starting point
 4. Fill in each spec in order: Strategic → Execution → Observability → Collaboration → Review
-5. Reference `specs/trading/` if you get stuck
+5. Reference `specs/examples/day-trading/` if you get stuck
 6. When done, share with implementers so they can build agents to interpret your specs
 
 ---
 
 ## For Questions
 
-- **How do I structure a specific spec?** See the template + `specs/trading/` example
+- **How do I structure a specific spec?** See the template + `specs/examples/day-trading/` example
 - **What level of detail do I need?** Enough that agents can make consistent decisions without guessing
 - **Can I change specs later?** Yes—specs evolve. But log changes so agents and operators understand what changed
 - **Should I include implementation details?** No—focus on *what* should happen, not *how* to code it. Implementers handle "how".
@@ -241,4 +241,4 @@ You're creating specs for a personal finance domain:
 - [ARCHITECTURE.md](../ARCHITECTURE.md) — System overview
 - [STRUCTURE.md](../STRUCTURE.md) — Other audiences and roles
 - [specs/templates/](../specs/templates/) — Templates for all five specs
-- [specs/trading/](../specs/trading/) — Complete trading example
+- [specs/examples/day-trading/](../specs/examples/day-trading/) — Complete trading example

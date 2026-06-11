@@ -1,7 +1,7 @@
 """
 Unit tests for spec_query skill.
 
-Tests use the trading specs from specs/trading/ as test data.
+Tests use the trading specs from specs/examples/day-trading/ as test data.
 """
 
 import unittest
@@ -17,10 +17,10 @@ class TestSpecQuery(unittest.TestCase):
         """Set up test fixtures."""
         cls.skill = SpecQuery()
         # Assume we're in skills/core/spec_query/ directory
-        # Trading specs are at ../../specs/trading/
+        # Trading specs are at ../../specs/examples/day-trading/
         cls.spec_base = os.path.join(
             os.path.dirname(__file__),
-            '../../../../specs/trading'
+            '../../../../specs/examples/day-trading'
         )
 
     def test_load_spec_execution(self):

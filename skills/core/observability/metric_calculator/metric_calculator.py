@@ -43,7 +43,7 @@ class MetricCalculator:
         """
         # TODO: Implement metric calculation logic
         # This is a stub; actual implementation varies by metric type
-        # See specs/trading/observability.md for examples of metric definitions
+        # See specs/examples/day-trading/observability.md for examples of metric definitions
 
         metric_name = metric_spec.get('name')
         if not metric_name:

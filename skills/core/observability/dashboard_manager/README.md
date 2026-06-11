@@ -90,7 +90,7 @@ except ValueError:
 from skills.core.spec_query import SpecQuery
 
 spec_query = SpecQuery()
-observability_spec = spec_query.load_spec('specs/trading/observability.md')
+observability_spec = spec_query.load_spec('specs/examples/day-trading/observability.md')
 dashboards_list = observability_spec['sections']  # All dashboards from spec
 
 # Current metrics

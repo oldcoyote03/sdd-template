@@ -19,7 +19,7 @@ This template serves three distinct audiences. Find your role and start there.
 - Design collaboration (who is involved, what they see, what they approve)
 - Create review processes (how to analyze outcomes and improve)
 
-**Reference**: [specs/templates/](specs/templates/) for templates and [specs/trading/](specs/trading/) for a complete example
+**Reference**: [specs/templates/](specs/templates/) for templates and [specs/examples/day-trading/](specs/examples/day-trading/) for a complete example
 
 **Timeline**: Start with Strategic spec, flow through the other four in sequence
 

@@ -23,7 +23,7 @@ class SpecQuery:
         Load and parse a markdown spec file.
 
         Args:
-            spec_path: Path to markdown spec file (e.g., 'specs/trading/execution.md')
+            spec_path: Path to markdown spec file (e.g., 'specs/examples/day-trading/execution.md')
 
         Returns:
             Dict with keys: 'raw' (markdown text), 'sections' (parsed sections),
@@ -71,7 +71,7 @@ class SpecQuery:
         Example:
             spec_query = SpecQuery()
             rules = spec_query.query(
-                spec_path='specs/trading/execution.md',
+                spec_path='specs/examples/day-trading/execution.md',
                 criteria={'tier': 1, 'condition': 'price_break'}
             )
             # Returns list of Tier 1 price_break rules

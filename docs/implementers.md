@@ -298,7 +298,7 @@ Review Agent queries this log to:
 
 ```python
 def test_execution_agent_tier1_setup():
-    agent = ExecutionAgent('specs/trading/execution.md', skills, mock_event_bus)
+    agent = ExecutionAgent('specs/examples/day-trading/execution.md', skills, mock_event_bus)
     
     # Simulate market signal
     signal = {
@@ -324,7 +324,7 @@ def test_execution_agent_tier1_setup():
 def test_spec_query_skill_tier1_filter():
     skill = SpecQuery()
     rules = skill.query(
-        spec_path='specs/trading/execution.md',
+        spec_path='specs/examples/day-trading/execution.md',
         criteria={'tier': 1}
     )
     
@@ -420,17 +420,17 @@ self.event_bus.publish('trade_execution', {
 ## See Also
 
 - [ARCHITECTURE.md](../ARCHITECTURE.md) — System design overview
-- [AGENTS_AND_ORCHESTRATION.md](../AGENTS_AND_ORCHESTRATION.md) — Detailed agent responsibilities
+- [reference/agent-interfaces.md](../reference/agent-interfaces.md) — Agent interface contracts
 - [STRUCTURE.md](../STRUCTURE.md) — Other audiences
 - [skills/core/](../skills/core/) — Core skills (spec_query, audit_log)
-- [specs/trading/](../specs/trading/) — Example domain specs to work from
+- [specs/examples/day-trading/](../specs/examples/day-trading/) — Example domain specs to work from
 
 ---
 
 ## Getting Started
 
 1. **Read** [ARCHITECTURE.md](../ARCHITECTURE.md) for system overview
-2. **Study** [specs/trading/](../specs/trading/) to understand what your agents will consume
+2. **Study** [specs/examples/day-trading/](../specs/examples/day-trading/) to understand what your agents will consume
 3. **Review** [skills/core/spec_query/](../skills/core/spec_query/) to learn how to parse specs
 4. **Review** [skills/core/audit_log/](../skills/core/audit_log/) to learn logging format
 5. **Build** your first agent (recommend starting with Observability Agent—simpler decision logic)

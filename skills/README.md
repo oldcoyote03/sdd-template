@@ -64,7 +64,7 @@ spec_query = SpecQuery()
 
 # Find all Tier 1 rules in execution.md
 tier1_rules = spec_query.query(
-    spec_path='specs/trading/execution.md',
+    spec_path='specs/examples/day-trading/execution.md',
     criteria={'tier': 1}
 )
 ```
