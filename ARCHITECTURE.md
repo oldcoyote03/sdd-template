@@ -63,67 +63,16 @@ This template defines a framework for executing, monitoring, and optimizing ongo
 
 ## Five Core Features
 
-Each feature is expressed as a specification and has corresponding agents and execution logic.
+The template is organized around five core features, each expressed as a specification and implemented through corresponding agents and execution logic. These features are architectural primitives, not separate systems: they work together to define decisions, actions, monitoring, collaboration, and review.
 
-### 1. Strategic
+For the authoritative definitions of each feature, see [reference/five-features.md](reference/five-features.md).
 
-**What**: Decision rules, frameworks, priorities, and rationale for an operation.
-
-**Includes**:
-- Objectives and success criteria
-- Decision frameworks and rules
-- Priorities and constraints
-- Underlying reasoning/principles
-
-**Agents**: Strategy Agent (interprets, refines based on feedback)
-
-### 2. Execution
-
-**What**: What actions can be taken, how, when, and with what approvals.
-
-**Includes**:
-- Actionable tasks or decisions
-- Permission/approval workflows
-- Execution constraints (timing, amounts, conditions)
-- Execution methods (manual vs. automated, with thresholds)
-
-**Agents**: Execution Agent (evaluates readiness, requests approval, triggers action)
-
-### 3. Observability
-
-**What**: What data to monitor, what signals matter, and how to alert.
-
-**Includes**:
-- Data sources and feed specifications
-- Metrics and KPIs
-- Alert thresholds and conditions
-- Relevant dashboards/visualizations
-
-**Agents**: Observability Agent (monitors, evaluates against specs, generates alerts)
-
-### 4. Collaboration
-
-**What**: Who is involved, what visibility they have, and what approval/input is needed.
-
-**Includes**:
-- Roles and responsibilities
-- Information access and visibility rules
-- Approval workflows and required sign-offs
-- Communication channels and escalation paths
-
-**Agents**: Collaboration Agent (routes information, enforces approvals, manages communication)
-
-### 5. Review & Feedback
-
-**What**: How outcomes are analyzed, lessons learned, and improvements are identified.
-
-**Includes**:
-- Review cadences and triggers
-- Analysis frameworks (what to measure, compare, evaluate)
-- Feedback mechanisms (how insights loop back to strategy/execution)
-- Optimization priorities
-
-**Agents**: Review Agent (analyzes outcomes, identifies patterns, recommends adjustments)
+In brief:
+- **Strategic**: Defines goals, decision rules, constraints, and priorities.
+- **Execution**: Defines what actions are allowed, when they may occur, and what approvals are required.
+- **Observability**: Defines what should be monitored, what thresholds matter, and how alerts should be routed.
+- **Collaboration**: Defines roles, visibility, approvals, and escalation paths.
+- **Review & Feedback**: Defines how outcomes are analyzed and how lessons loop back into the system.
 
 ## Optional Augmentation Features
 

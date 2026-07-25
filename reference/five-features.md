@@ -1,6 +1,8 @@
 # Five Core Features
 
-This document explains the five core features and how they interconnect.
+This document is the authoritative reference for the five core features and how they interconnect.
+
+It is intentionally more detailed than [ARCHITECTURE.md](../ARCHITECTURE.md), which uses the same concepts at a higher architectural level.
 
 ---
 
@@ -14,7 +16,7 @@ Every operational system built with this template consists of five specification
 4. **Collaboration**: Who is involved and what visibility/authority they have
 5. **Review**: How you analyze outcomes and improve
 
-Each feature has a corresponding agent that interprets that feature's spec and coordinates with other agents.
+Each feature has a corresponding agent that interprets that feature's spec and coordinates with other agents. For the operational responsibilities of those agents, see [docs/implementers.md](../docs/implementers.md). For practical guidance on writing each spec, see [docs/spec-authors.md](../docs/spec-authors.md).
 
 ---
 

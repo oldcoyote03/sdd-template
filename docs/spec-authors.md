@@ -18,6 +18,8 @@ Specs are the **single source of truth**. Agents read them to decide what to do.
 
 ## The Five Core Specs
 
+The five features are defined in [reference/five-features.md](../reference/five-features.md). Use that document as the canonical description of what each feature means. This guide focuses on the practical task of writing each spec clearly and effectively.
+
 Every domain has five specifications. You'll write them in this order:
 
 ### 1. **Strategic Spec** — Decision Rules & Frameworks

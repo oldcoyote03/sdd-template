@@ -21,17 +21,19 @@ Your architecture consists of:
 
 ## Agent Architecture
 
+The detailed meaning of the five features lives in [reference/five-features.md](../reference/five-features.md). Use that document as the canonical definition of each feature; use this section to understand how agents operationalize those features in practice.
+
 ### Agent Responsibilities
 
 Each agent has a single well-defined job:
 
 | Agent | Reads | Decides | Produces |
 |-------|-------|---------|----------|
-| **Strategy** | Strategic spec + Review feedback | How to explain strategy; when to suggest improvements | Strategy context for other agents; refinement proposals |
-| **Execution** | Execution spec + Strategic spec + Observability signals | Whether to execute; who must approve | Trade execution commands; approval requests; audit logs |
-| **Observability** | Observability spec + Live data feeds | What metrics to calculate; what alerts to generate | Live metrics; alert events; dashboard updates |
-| **Collaboration** | Collaboration spec + Alerts/requests from other agents | Who needs to see what; enforce approval workflows | Routed notifications; approval tracking |
-| **Review** | Review spec + Trade/outcome logs + Strategic spec | What analyses to run; what patterns to report | Analysis reports; feedback recommendations; refinement suggestions |
+| **Strategy** | Strategic spec + review feedback | How to refine context and suggest improvements | Strategy context, refinement proposals, and guidance for other agents |
+| **Execution** | Execution spec + relevant signals + approval context | Whether to act, whether approval is needed, and what to execute | Execution commands, approval requests, and audit records |
+| **Observability** | Observability spec + live data feeds | What metrics matter and which conditions should trigger alerts | Metrics, alerts, and dashboard updates |
+| **Collaboration** | Collaboration spec + incoming requests and alerts | Who should receive information and how approval rules apply | Routed notifications, approvals, and status updates |
+| **Review** | Review spec + outcome logs + prior specs | What to analyze and what feedback should be surfaced | Review reports, recommendations, and proposed spec refinements |
 
 ### Agent Interface Contracts
 
