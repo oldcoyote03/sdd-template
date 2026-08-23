@@ -32,7 +32,7 @@ Execute these file system changes:
 
 1. **Delete template-only artifacts**
    - Delete `docs/template-usage/` directory
-   - Delete `.fork-guide/` directory  
+   - Keep `.fork-guide/` until the transition is complete; its templates and validator are used in later phases
    - Delete `specs/templates/` directory (optional; can keep as reference)
 
 2. **Rename domain specs folder**
@@ -83,7 +83,7 @@ If specs are not yet written (Q3 = "needs to be created"):
    - Fill in `review.md` with review cadences, analysis frameworks, feedback mechanisms
 
 3. **Validate spec completeness**
-   - Run `.fork-guide/templates/spec-validator.py`
+   - Run `python .fork-guide/templates/spec-validator.py specs/[your-domain]/`
    - It checks that all 5 specs exist and contain required sections
    - Fix any warnings
 
@@ -131,7 +131,7 @@ Provide the human with:
 - ✅ Created `docs/trader.md`, `docs/risk-manager.md`, `docs/analyst.md` (non-opinionated templates)
 - ✅ Generated `IMPLEMENTATION.md` with sections for agent setup, data feeds, dashboards
 - ✅ Updated `README.md` with day-trading-specific intro
-- ✅ Deleted `docs/template-usage/`, `.fork-guide/`, `specs/templates/` (or marked for manual deletion)
+- ✅ Marked `docs/template-usage/`, `.fork-guide/`, and `specs/templates/` for deletion during final cleanup
 - ✅ Created `skills/domain/` stub with skill categories (market_data, order_execution, etc.)
 
 ### Next Steps for Human
