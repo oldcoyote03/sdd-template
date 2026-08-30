@@ -29,7 +29,7 @@ These files/folders are guidance for template users only. Delete them to clean u
 - [ ] Delete `docs/operators.md` (replace with domain role guides)
 
 **Fork transition guides** (only for template repo):
-- [ ] Delete `.fork-guide/` directory (fork transition guide — not needed after forking)
+- [ ] Delete `.fork-guide/` directory during final cleanup, after validation
 
 ## Specs: Rename and Populate
 
@@ -82,7 +82,7 @@ If you plan to implement agents in this repo:
 
 ## Validation
 
-- [ ] Run `python .fork-guide/templates/spec-validator.py` (before deleting .fork-guide/)
+- [ ] Run `python .fork-guide/templates/spec-validator.py specs/[your-domain]/` (before deleting `.fork-guide/`)
   - Checks that all 5 specs exist in `specs/[domain]/`
   - Checks that each spec has required sections
   - Reports any missing or incomplete sections
