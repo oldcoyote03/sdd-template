@@ -12,6 +12,8 @@ Before executing the transition, collect answers to these questions:
 **Q2**: What are the primary roles in this domain?  
 *(Example: "Trader, Risk Manager, Analyst" for trading)*
 
+**Canonical rule**: Do not infer domain-specific roles, responsibilities, policies, or vocabulary unless the human explicitly defines them. If the human has not specified semantics, create a structurally complete but semantically neutral draft using placeholders such as "Role A", "Decision Owner", or "Operational Reviewer".
+
 **Q3**: Where are the operational specs?  
 - Already written? (paste or provide link)
 - Starting from the templates? (which templates apply?)
@@ -22,13 +24,25 @@ Before executing the transition, collect answers to these questions:
 - Specs only (agents built elsewhere)
 - Other?
 
+**Q5**: Do you have a knowledge base, domain brief, or source documents to ground the fork?
+- Yes, KB or domain documents available
+- No, not yet; create a neutral scaffold first
+- I will provide facts later
+
 ---
+
+## Default Operating Principle
+
+- **Neutral fork first** — create structure and placeholders, not domain meaning.
+- **Ground with KB or source material** — collect role definitions, policies, terminology, constraints, and success criteria.
+- **Specialize deliberately** — replace placeholders only with facts that have a clear source.
+- **Human review gate** — confirm final domain meaning before treating it as authoritative.
 
 ## Transition Steps
 
 ### Phase 1: Structural Changes
 
-Execute these file system changes:
+Execute these file system changes without adding domain meaning yet:
 
 1. **Delete template-only artifacts**
    - Delete `docs/template-usage/` directory
@@ -39,7 +53,16 @@ Execute these file system changes:
    - Rename `specs/examples/day-trading/` to `specs/[your-domain]/`  
    - Or create `specs/[your-domain]/` if starting from scratch
 
-3. **Preserve reusable infrastructure**
+3. **Create KB scaffold**
+   - Create `specs/[your-domain]/kb/` as a non-normative evidence area for grounding the fork.
+   - Include a short `README.md` explaining that this folder holds domain fact sources, glossary terms, policies, and supporting notes.
+   - Use it for KB material, not for normative spec content.
+
+4. **Create neutral placeholders**
+   - Keep the repo structure but leave role names, objectives, constraints, and metrics as placeholders unless the human has explicitly supplied them.
+   - Use labels like `Role A`, `[objective]`, `[constraint]`, and `[metric to define]`.
+
+5. **Preserve reusable infrastructure**
    - Keep `reference/` (contains agent interfaces, feature explanations)
    - Keep `skills/core/` (reusable infrastructure: audit_log, observability, spec_query)
 
@@ -47,7 +70,12 @@ Execute these file system changes:
 
 ### Phase 2: Content Creation
 
+Before specializing content, determine whether a KB or source material exists (Q5). If a KB exists, ground all specialization in those facts. If no KB exists yet, leave content neutral and explicitly marked for later specialization. Use `specs/[your-domain]/kb/` as the repository-local home for those facts and supporting material.
+
 For each primary role from Q2, create a role guide:
+
+- Keep each role guide structurally useful and semantically neutral until the human confirms the actual domain language.
+- Add an evidence source note when a value is grounded in KB material or explicit human input.
 
 1. **Create `docs/[role-slug].md`**  
    - Use `.fork-guide/templates/role-guide-template.md` as a template
@@ -76,11 +104,14 @@ If specs are not yet written (Q3 = "needs to be created"):
    - Each feature has a corresponding spec file
 
 2. **Populate `specs/[domain]/`**
+   - Default to neutral placeholders and structural scaffolding unless the human has explicitly defined the domain semantics.
    - Fill in `strategic.md` with domain-specific objectives, decision frameworks, constraints
    - Fill in `execution.md` with domain actions, preconditions, approval workflows
    - Fill in `observability.md` with monitoring targets, metrics, alert thresholds
    - Fill in `collaboration.md` with role definitions, visibility rules, approval paths
    - Fill in `review.md` with review cadences, analysis frameworks, feedback mechanisms
+   - If a detail is not specified, prefer `[to be defined]`, `[role placeholder]`, or `[constraint]` instead of guessing.
+   - If a fact comes from KB material or human input, note the source briefly so the fork remains traceable.
 
 3. **Validate spec completeness**
    - Run `python .fork-guide/templates/spec-validator.py specs/[your-domain]/`

@@ -4,6 +4,8 @@
 
 This template defines the decision rules, frameworks, and priorities for an operation.
 
+Use neutral placeholders and generic wording unless the human has explicitly provided domain semantics. Do not invent domain-specific rules, metrics, actors, or operational assumptions when the real meaning is still unspecified. When user intent is vague, leave the section as a placeholder rather than guessing.
+
 ## Structure
 
 ### Objectives & Success Criteria
